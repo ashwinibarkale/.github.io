@@ -8,12 +8,12 @@ body {
 }
 
 a {
-  color: #ffb727;
+  color: hotpink;
   text-decoration: none;
 }
 
 a:hover {
-  color: #ffc85a;
+  color: hotpink;
   text-decoration: none;
 }
 
@@ -26,7 +26,42 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
+/*--------------------------------------------------------------
+#text animation on ASHWINI 
+--------------------------------------------------------------*/
+.typing-animation {
+  white-space: nowrap;
+  border-right: 0.15em solid hotpink; /* Blinking cursor effect */
+  animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
 
+/* Keyframe animation for typing effect */
+@keyframes typing {
+  from {
+      width: 0;
+  }
+  to {
+      width: 100%;
+  }
+}
+
+/* Blinking cursor animation */
+@keyframes blink-caret {
+  from, to {
+      border-color: transparent;
+  }
+  50% {
+      border-color: hotpink;
+  }
+}
+
+
+/* Mobile media query */
+@media (max-width: 768px) {
+  .typing-animation {
+      font-size: 18px; /* Adjust font size for mobile */
+  }
+}
 /* Default styles */
 #hero h1 {
   color: #FFFFFF;
@@ -43,13 +78,6 @@ h6 {
     
   }
 }
-
-
-
-
-
-
-
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -60,7 +88,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #ffb727;
+  background: hotpink;
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -74,7 +102,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #ffc550;
+  background: aqua;
   color: #fff;
 }
 
@@ -152,7 +180,7 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #ffb727;
+  color: hotpink;
 }
 
 .navbar .dropdown ul {
@@ -287,7 +315,7 @@ h6 {
 .navbar-mobile a:hover,
 .navbar-mobile .active,
 .navbar-mobile li:hover>a {
-  color: #ffb727;
+  color: hotpink;
 }
 
 .navbar-mobile .getstarted,
@@ -339,9 +367,6 @@ h6 {
   background-size: cover;
   position: relative;
 }
-
-
-
 #hero:before {
   content: "";
   background: rgba(0, 0, 0, 0.65);
@@ -376,9 +401,9 @@ h6 {
 #hero h2 {
   color: #FFFFFF;
   margin-bottom: 50px;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: bold;
-
+  color: whitesmoke;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -394,7 +419,7 @@ h6 {
 }
 
 #hero .btn-scroll:hover {
-  color: #ffb727;
+  color: hotpink;
 }
 
 @media (min-width: 1024px) {
@@ -423,8 +448,6 @@ h6 {
     transform: translateY(-5px);
   }
 }
-
-
 
 /*--------------------------------------------------------------
 # Sections General
@@ -574,7 +597,7 @@ section {
 .about .content ul i {
   font-size: 16px;
   margin-right: 5px;
-  color: #ffb727;
+  color: hotpink;
   line-height: 0;
 }
 
@@ -589,7 +612,7 @@ section {
 .about .content .count-box i {
   display: block;
   font-size: 36px;
-  color: #ffb727;
+  color: hotpink;
   float: left;
   line-height: 0;
 }
@@ -602,8 +625,6 @@ section {
   color: #3b434a;
   margin-left: 50px;
 }
-
-
 
 .about .content .count-box a {
   font-weight: 600;
@@ -659,93 +680,78 @@ section {
   width: 1px;
   height: 10px;
   transition: 0.9s;
-  background-color: #ffb727;
+  background-color: hotpink;
 }
 .about .content p:last-child {
   margin-bottom: 0;
+
+
+  
+/*--------------------------------------------------------------
+# PROJECT
+--------------------------------------------------------------*/
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* CSS for Education Section */
-#education .education-items {
+.project-items {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-}
-
-.education-item {
-  width: calc(50% - 20px); /* Decreased width to 50% */
-  padding: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
-  text-align: center; /* Centering text */
-}
-
-.education-items h3{
-  color:  #ffb727;
-}
-
-
-
-/* styles.css */
-
-.education-items .education-item {
-  margin-bottom: 20px; /* Adjust margin between education items */
-  padding: 10px; /* Add some padding to the education item */
-  border: 1px solid transparent; /* Add transparent border to education item */
-  transition: border 0.3s ease; /* Add transition effect for the hover border */
-}
-
-.education-items .education-item:hover {
-  border: 1px solid orange; /* Add border color on hover */
-}
-
-
-
-
-/* CSS for Education Projects Section */
-#projects .project-items {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .project-item {
-  width: calc(50% - 20px); /* Decreased width to 50% */
-  padding: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
-  text-align: center; /* Centering text */
+  width: calc(50% - 30px);
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 11px rgba(0, 0, 0, 0.7);
+  transition: box-shadow 0.3s ease;
+  text-align: center;
+  background-color: lightgray;
 }
 
-.project-items h2{
-  color: #ffb727;
+.project-item:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
-
-
-
-
-
-/* styles.css */
+.project-item:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 183, 39, 0.5);
+  transition: background-color 0.3s ease;
+  border: 2px solid hotpink; /* Add hot pink border on hover */
+  box-sizing: border-box;
+}
 
 .project-item h3 {
-  color: orange;
+  color: hotpink;
+  font-weight: bold;
 }
 
 .project-item sub {
   font-size: 12px;
+  color: hotpink;
+  font-weight: bold;
+}
+
+.project-item p {
+  margin: 0;
+}
+
+.project-item i {
+  font-style: italic;
+}
+
+.project-item b {
+  font-weight: bold;
+}
+
+.project-item p:last-child {
+  margin-bottom: 10px;
 }
 
 .project-item ul {
@@ -759,114 +765,184 @@ section {
 
 .project-item a {
   color: #007bff;
-  text-decoration: none; /* Remove underline */
+  text-decoration: none;
 }
 
 .project-item a:hover {
-  text-decoration: none; /* Remove underline on hover */
+  text-decoration: none;
 }
 
-
-
-
-/* styles.css */
-
-.project-item {
-  margin-bottom: 20px; /* Adjust margin between project items */
+.project-items h2 {
+  color: #ffb727;
 }
 
-.project-item h3 {
-  color: orange;
+.view-project-link {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  margin-top: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
-.project-item sub {
-  font-size: 12px;
+.view-project-link i {
+  margin-left: 5px;
 }
 
-.project-item p {
-  margin: 0; /* Remove default margin for paragraphs */
+.view-project-link:hover {
+  background-color: #0056b3;
 }
 
-.project-item i {
-  font-style: italic;
-}
-
-.project-item b {
-  font-weight: bold;
-}
-
-.project-item p:last-child {
-  margin-bottom: 10px; /* Add a small margin to the last paragraph */
-}
-
-
-
-/* styles.css */
-
-/* styles.css */
-
-
-/* styles.css */
-
-.project-item {
-  margin-bottom: 20px; /* Adjust margin between project items */
-  padding: 10px; /* Add some padding to the project item */
-  border: 1px solid transparent; /* Add transparent border to project item */
-  transition: border 0.3s ease; /* Add transition effect for the hover border */
-}
-
-.project-item:hover {
-  border: 1px solid orange; /* Add border color on hover */
-}
-
-
-
-
-
-
-
-
-
-
-
-/* Mobile Media Query for Education Section */
-@media (max-width: 768px) {
-  .education-item {
-    width: 100%; /* Full width on smaller screens */
-  }
-}
-
-/* Mobile Media Query for Education Projects Section */
+/* Media Query for Mobile Devices */
 @media (max-width: 768px) {
   .project-item {
-    width: 100%; /* Full width on smaller screens */
+    width: 100%; /* Make each item take full width on smaller screens */
+
   }
 }
 
 
+                                                                             section#education {
+                                                                              width: 90%;
+                                                                              margin: 20px auto;
+                                                                              position: relative;
+                                                                            }
+
+                                                                            
+                                                                            section#education:before {
+                                                                              content: '';
+                                                                              display: block;
+                                                                              position: absolute;
+                                                                              left: 50%;
+                                                                              top: 0;
+                                                                              margin: 0 0 0 -1px;
+                                                                              width: 2px;
+                                                                              height: 100%;
+                                                                              background: rgba(255,255,255,0.2);
+                                                                            }
+                                                                            section#education article {
+                                                                              width: 100%;
+                                                                              margin: 0 0 20px 0;
+                                                                              position: relative;
+                                                                            }
+                                                                            section#education article:after {
+                                                                              content: '';
+                                                                              display: block;
+                                                                              clear: both;
+                                                                            }
+                                                                            section#education article div.inner {
+                                                                              width: 40%;
+                                                                              float: left;
+                                                                              margin: 5px 0 0 0;
+                                                                              border-radius: 6px;
+                                                                            }
+                                                                            section#education article div.inner span.date {
+                                                                              display: block;
+                                                                              width: 60px;
+                                                                              height: 50px;
+                                                                              padding: 5px 0;
+                                                                              position: absolute;
+                                                                              top: 0;
+                                                                              left: 50%;
+                                                                              margin: 0 0 0 -32px;
+                                                                              border-radius: 100%;
+                                                                              font-size: 12px;
+                                                                              font-weight: 900;
+                                                                              text-transform: uppercase;
+                                                                              background: #25303B;
+                                                                              color: rgba(255,255,255,0.5);
+                                                                              border: 2px solid rgba(255,255,255,0.2);
+                                                                              box-shadow: 0 0 0 7px #25303B;
+                                                                            }
+                                                                            section#education article div.inner span.date span {
+                                                                              display: block;
+                                                                              text-align: center;
+                                                                            }
+                                                                            section#education article div.inner span.date span.day {
+                                                                              font-size: 10px;
+                                                                            }
+                                                                            section#education article div.inner span.date span.month {
+                                                                              font-size: 18px;
+                                                                            }
+                                                                            section#education article div.inner span.date span.year {
+                                                                              font-size: 10px;
+                                                                            }
+                                                                            section#education article div.inner h2 {
+                                                                              padding: 15px;
+                                                                              margin: 0;
+                                                                              color: #fff;
+                                                                              font-size: 20px;
+                                                                              text-transform: uppercase;
+                                                                              letter-spacing: -1px;
+                                                                              border-radius: 6px 6px 0 0;
+                                                                              position: relative;
+                                                                            }
+                                                                            section#education article div.inner h2:after {
+                                                                              content: '';
+                                                                              position: absolute;
+                                                                              top: 20px;
+                                                                              right: -5px;
+                                                                                width: 10px; 
+                                                                                height: 10px;
+                                                                              -webkit-transform: rotate(-45deg);
+                                                                            }
+                                                                            section#education article div.inner p {
+                                                                              padding: 15px;
+                                                                              margin: 0;
+                                                                              font-size: 14px;
+                                                                              background: #fff;
+                                                                              color: #656565;
+                                                                              border-radius: 0 0 6px 6px;
+                                                                            }
+                                                                            section#education article:nth-child(2n+2) div.inner {
+                                                                              float: right;
+                                                                            }
+                                                                            section#education article:nth-child(2n+2) div.inner h2:after {
+                                                                              left: -5px;
+                                                                            }
+                                                                            section#education article:nth-child(1) div.inner h2 {
+                                                                              background: #e74c3c;
+                                                                            }
+                                                                            section#education article:nth-child(1) div.inner h2:after {
+                                                                              background: #e74c3c;
+                                                                            }
+                                                                            section#education article:nth-child(2) div.inner h2 {
+                                                                              background: #2ecc71;
+                                                                            }
+                                                                            section#education article:nth-child(2) div.inner h2:after {
+                                                                              background: #2ecc71;
+                                                                            }
+                                                                            section#education article:nth-child(3) div.inner h2 {
+                                                                              background: #e67e22;
+                                                                            }
+                                                                            section#education article:nth-child(3) div.inner h2:after {
+                                                                              background: #e67e22;
+                                                                            }
+                                                                            section#education article:nth-child(4) div.inner h2 {
+                                                                              background: #1abc9c;
+                                                                            }
+                                                                            section#education article:nth-child(4) div.inner h2:after {
+                                                                              background: #1abc9c;
+                                                                            }
+                                                                            section#education article:nth-child(5) div.inner h2 {
+                                                                              background: #9b59b6;
+                                                                            }
+                                                                            section#education article:nth-child(5) div.inner h2:after {
+                                                                              background: #9b59b6;
+                                                                            }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*--------------------------------------------------------------
+# TESTIMINOMIALS
+--------------------------------------------------------------*/
 
 
 .testimonials {
   padding: 80px 0;
-  background: url("../img/testimonials-bg.gif") no-repeat;
+  background: url("../img/ec785ecbe76bc18400a6267ff3e1e455.gif") no-repeat;
   background-position: center center;
   background-size: cover;
   position: relative;
@@ -954,7 +1030,7 @@ section {
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #ffb727;
+  background-color: hotpink;
 }
 
 @media (min-width: 992px) {
@@ -964,46 +1040,65 @@ section {
 }
 
 
+/*--------------------------------------------------------------
+# INTEREST
+--------------------------------------------------------------*/
+
+.interst {
+  padding: 80px 0;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+.interest-card {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: cardAnimation 1s forwards, borderColorAnimation 5s infinite alternate;
+  position: relative;
+  transition: border-color 0.3s ease-in-out;
+  background-color: lightcyan;
+}
+.border-animation {
+  border: 2px solid red;
+}
+.interest-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.interest-card p {
+  font-size: 16px;
+  color: #666;
+}
+
+@keyframes cardAnimation {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes borderColorAnimation {
+  0% {
+    border-color: goldenrod;
+  }
+  50% {
+    border-color: red;
+  }
+  100% {
+    border-color: purple;
+  }
+}
+@media (max-width: 768px) {
+  .interest-card {
+    padding: 20px;
+  }
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-/* CSS Styles */
-
-
-
-
-
-
-
-
- 
 /*--------------------------------------------------------------
 # My Resume
 --------------------------------------------------------------*/
@@ -1027,7 +1122,7 @@ section {
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
-  color: #ffb727;
+  color: hotpink;
   margin-bottom: 10px;
 }
 
@@ -1086,13 +1181,13 @@ section {
   border-radius: 50%;
   width: 72px;
   height: 72px;
-  background: #fff4df;
+  background: wheat;
 }
 
 .services .icon i {
   font-size: 36px;
   line-height: 1;
-  color: #ffb727;
+  color: hotpink;
 }
 
 .services .title {
@@ -1113,23 +1208,23 @@ section {
 }
 
 .services .icon-box:hover {
-  border-color: #ffb727;
+  border-color: hotpink;
 }
 
 .services .icon-box:hover .title a {
-  color: #ffb727;
+  color: hotpink;
 }
-
-
-
-
 /*--------------------------------------------------------------
 # Contact Me
 --------------------------------------------------------------*/
 .contact .info-box {
   color: #444444;
   text-align: center;
-  box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+  box-shadow: 
+  0 0 20px rgba(214, 215, 216, 0.15),
+  0 0 40px rgba(214, 215, 216, 0.3),
+  0 0 60px rgba(214, 215, 216, 0.45);
+
   padding: 20px 0 30px 0;
 }
 
@@ -1143,21 +1238,21 @@ section {
 }
 
 .info-box:hover {
-  border: 1px solid orange; /* Add border color on hover */
+  border: 1px solid hotpink; /* Add border color on hover */
 }
 
 
 .contact .info-box i.bx {
   font-size: 24px;
-  color: #ffb727;
+  color: hotpink;
   border-radius: 50%;
   padding: 15px;
-  background: #fff6e4;
+  background: wheat;
 }
 
 .contact .info-box h3 {
   font-size: 20px;
-  color: #777777;
+  color: grey;
   font-weight: 700;
   margin: 10px 0;
 }
@@ -1178,23 +1273,27 @@ section {
 .contact .social-links a {
   font-size: 18px;
   display: inline-block;
-  color: #687683;
+  color: black;
   line-height: 1;
   margin: 0 8px;
   transition: 0.3s;
   padding: 14px;
   border-radius: 50px;
-  border: 1px solid #dde1e4;
+  border: 1px solid hotpink;
 }
 
 .contact .social-links a:hover {
   color: #fff;
-  border-color: #ffb727;
-  background: #ffb727;
+  border-color: hotpink;
+  background: hotpink;
 }
 
 .contact .php-email-form {
-  box-shadow: 0 0 32px rgba(214, 215, 216, 0.8);
+  box-shadow: 
+  0 0 20px rgba(214, 215, 216, 0.15),
+  0 0 40px rgba(214, 215, 216, 0.3),
+  0 0 60px rgba(214, 215, 216, 0.45);
+
   padding: 27px;
 }
 
@@ -1256,7 +1355,7 @@ section {
 
 .contact .php-email-form input::focus,
 .contact .php-email-form textarea::focus {
-  background-color: #ffb727;
+  background-color: hotpink;
 }
 
 .contact .php-email-form input {
@@ -1268,7 +1367,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit] {
-  background: #ffb727;
+  background: hotpink;
   border: 0;
   padding: 10px 24px;
   color: #fff;
@@ -1277,7 +1376,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: #ffc85a;
+  background: hotpink;
 }
 
 
@@ -1291,10 +1390,8 @@ section {
 }
 
 .php-email-form:hover {
-  border: 1px solid orange; /* Add border color on hover */
+  border: 1px solid hotpink; /* Add border color on hover */
 }
-
-
 
 
 @keyframes animate-loading {
@@ -1358,7 +1455,7 @@ section {
 #footer .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #ffb727;
+  background: hotpink;
   color: #fff;
   line-height: 1;
   padding: 8px 0;
@@ -1371,7 +1468,7 @@ section {
 }
 
 #footer .social-links a:hover {
-  background: #f3a200;
+  background: hotpink;
   color: #fff;
   text-decoration: none;
 }
