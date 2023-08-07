@@ -14,6 +14,29 @@
     }
   }
 
+
+
+// INTEREST SECTION (in milliseconds)
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const interestCards = document.querySelectorAll(".interest-card");
+
+    function animateCards() {
+      interestCards.forEach((card, index) => {
+        setTimeout(() => {
+          card.classList.add("animate");
+          setInterval(() => {
+            card.classList.toggle("border-color-change");
+          }, 5000); // Change border color every 5 seconds
+        }, index * 1000); // Adjust the delay here (in milliseconds)
+      });
+    }
+
+    animateCards();
+  });
+
+
+
   /**
    * Easy event listener function
    */
@@ -174,20 +197,6 @@
    * Testimonials slider
    */
 
-
-
-
-
-
-
-
-
-   
-
-
-
-
-
   new Swiper('.testimonials-slider', {
     speed: 600,
     loop: true,
@@ -202,33 +211,6 @@
       clickable: true
     }
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-// Function to display testimonials
 
 
   /**
