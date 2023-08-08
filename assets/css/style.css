@@ -654,103 +654,86 @@ section {
 .about .content p:last-child {
   margin-bottom: 0;
 
-
+}
   
 /*--------------------------------------------------------------
 # PROJECT
 --------------------------------------------------------------*/
-
+.projects {
+  text-align: center;
+  padding: 40px 0;
 }
 .project-items {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
 }
+
 
 .project-item {
-  width: calc(50% - 30px);
-  margin-bottom: 40px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 2px 11px rgba(0, 0, 0, 0.7);
-  transition: box-shadow 0.3s ease;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 11px rgba(0, 0, 0, 0.8);
+  width: 400px; /* Increased width for the grid */
   text-align: center;
-  background-color: lightgray;
+  animation: colorChange 5s infinite alternate;
 }
 
-.project-item:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-}
-
-.project-item:hover::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 183, 39, 0.5);
-  transition: background-color 0.3s ease;
-  border: 2px solid hotpink; /* Add hot pink border on hover */
-  box-sizing: border-box;
+@keyframes colorChange {
+  0%, 100% {
+    background-color: lightslategray;
+  }
+  25% {
+    background-color: lawngreen;
+  }
+  50% {
+    background-color: skyblue;
+  }
+  75% {
+    background-color: pink;
+  }
+  75% {
+    background-color: aqua;
+  }
+  75% {
+    background-color: hotpink;
+  }
 }
 
 .project-item h3 {
-  color: hotpink;
+  margin-bottom: 10px;
+  color: darkred;
   font-weight: bold;
 }
+
+
 
 .project-item sub {
+
   font-size: 12px;
-  color: hotpink;
   font-weight: bold;
+  color: darkred;
 }
 
-.project-item p {
-  margin: 0;
-}
-
-.project-item i {
-  font-style: italic;
-}
-
-.project-item b {
-  font-weight: bold;
-}
-
-.project-item p:last-child {
-  margin-bottom: 10px;
-}
-
-.project-item ul {
-  list-style-type: disc;
-  margin-left: 20px;
-}
-
-.project-item ul li {
-  margin-bottom: 5px;
-}
 
 .project-item a {
-  color: #007bff;
+  color: darkred;
   text-decoration: none;
+  transition: color 0.3s;
+  font-weight: bold;
 }
 
 .project-item a:hover {
-  text-decoration: none;
+  color: #0056b3;
 }
 
-.project-items h2 {
-  color: #ffb727;
-}
-
-
-/* Media Query for Mobile Devices */
+/* Media query for mobile devices */
 @media (max-width: 768px) {
   .project-item {
-    width: 100%; /* Make each item take full width on smaller screens */
-
+    width: 100%; /* Full width on mobile devices */
   }
 }
 
@@ -759,138 +742,136 @@ section {
 # EDUCATION
 --------------------------------------------------------------*/
 
+section#education {
+  width: 90%;
+  margin: 20px auto;
+  position: relative;
+}
 
 
+section#education:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin: 0 0 0 -1px;
+  width: 2px;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+}
+section#education article {
+  width: 100%;
+  margin: 0 0 20px 0;
+  position: relative;
+}
+section#education article:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+section#education article div.inner {
+  width: 40%;
+  float: left;
+  margin: 5px 0 0 0;
+  border-radius: 6px;
+}
+section#education article div.inner span.date {
+  display: block;
+  width: 60px;
+  height: 50px;
+  padding: 5px 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin: 0 0 0 -32px;
+  border-radius: 100%;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: #25303B;
+  color: rgba(255,255,255,0.5);
+  border: 2px solid rgba(255,255,255,0.2);
+  box-shadow: 0 0 0 7px #25303B;
+}
+section#education article div.inner span.date span {
+  display: block;
+  text-align: center;
+}
+section#education article div.inner span.date span.day {
+  font-size: 10px;
+}
+section#education article div.inner span.date span.month {
+  font-size: 18px;
+}
+section#education article div.inner span.date span.year {
+  font-size: 10px;
+}
+section#education article div.inner h2 {
+  padding: 15px;
+  margin: 0;
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  border-radius: 6px 6px 0 0;
+  position: relative;
+}
+section#education article div.inner h2:after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  right: -5px;
+    width: 10px; 
+    height: 10px;
+  -webkit-transform: rotate(-45deg);
+}
+section#education article div.inner p {
+  padding: 15px;
+  margin: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #656565;
+  border-radius: 0 0 6px 6px;
+}
+section#education article:nth-child(2n+2) div.inner {
+  float: right;
+}
+section#education article:nth-child(2n+2) div.inner h2:after {
+  left: -5px;
+}
+section#education article:nth-child(1) div.inner h2 {
+  background: #e74c3c;
+}
+section#education article:nth-child(1) div.inner h2:after {
+  background: #e74c3c;
+}
+section#education article:nth-child(2) div.inner h2 {
+  background: #2ecc71;
+}
+section#education article:nth-child(2) div.inner h2:after {
+  background: #2ecc71;
+}
+section#education article:nth-child(3) div.inner h2 {
+  background: #e67e22;
+}
+section#education article:nth-child(3) div.inner h2:after {
+  background: #e67e22;
+}
+section#education article:nth-child(4) div.inner h2 {
+  background: #1abc9c;
+}
+section#education article:nth-child(4) div.inner h2:after {
+  background: #1abc9c;
+}
+section#education article:nth-child(5) div.inner h2 {
+  background: #9b59b6;
+}
+section#education article:nth-child(5) div.inner h2:after {
+  background: #9b59b6;
+}
 
 
-                                                                             section#education {
-                                                                              width: 90%;
-                                                                              margin: 20px auto;
-                                                                              position: relative;
-                                                                            }
-
-                                                                            
-                                                                            section#education:before {
-                                                                              content: '';
-                                                                              display: block;
-                                                                              position: absolute;
-                                                                              left: 50%;
-                                                                              top: 0;
-                                                                              margin: 0 0 0 -1px;
-                                                                              width: 2px;
-                                                                              height: 100%;
-                                                                              background: rgba(255,255,255,0.2);
-                                                                            }
-                                                                            section#education article {
-                                                                              width: 100%;
-                                                                              margin: 0 0 20px 0;
-                                                                              position: relative;
-                                                                            }
-                                                                            section#education article:after {
-                                                                              content: '';
-                                                                              display: block;
-                                                                              clear: both;
-                                                                            }
-                                                                            section#education article div.inner {
-                                                                              width: 40%;
-                                                                              float: left;
-                                                                              margin: 5px 0 0 0;
-                                                                              border-radius: 6px;
-                                                                            }
-                                                                            section#education article div.inner span.date {
-                                                                              display: block;
-                                                                              width: 60px;
-                                                                              height: 50px;
-                                                                              padding: 5px 0;
-                                                                              position: absolute;
-                                                                              top: 0;
-                                                                              left: 50%;
-                                                                              margin: 0 0 0 -32px;
-                                                                              border-radius: 100%;
-                                                                              font-size: 12px;
-                                                                              font-weight: 900;
-                                                                              text-transform: uppercase;
-                                                                              background: #25303B;
-                                                                              color: rgba(255,255,255,0.5);
-                                                                              border: 2px solid rgba(255,255,255,0.2);
-                                                                              box-shadow: 0 0 0 7px #25303B;
-                                                                            }
-                                                                            section#education article div.inner span.date span {
-                                                                              display: block;
-                                                                              text-align: center;
-                                                                            }
-                                                                            section#education article div.inner span.date span.day {
-                                                                              font-size: 10px;
-                                                                            }
-                                                                            section#education article div.inner span.date span.month {
-                                                                              font-size: 18px;
-                                                                            }
-                                                                            section#education article div.inner span.date span.year {
-                                                                              font-size: 10px;
-                                                                            }
-                                                                            section#education article div.inner h2 {
-                                                                              padding: 15px;
-                                                                              margin: 0;
-                                                                              color: #fff;
-                                                                              font-size: 20px;
-                                                                              text-transform: uppercase;
-                                                                              letter-spacing: -1px;
-                                                                              border-radius: 6px 6px 0 0;
-                                                                              position: relative;
-                                                                            }
-                                                                            section#education article div.inner h2:after {
-                                                                              content: '';
-                                                                              position: absolute;
-                                                                              top: 20px;
-                                                                              right: -5px;
-                                                                                width: 10px; 
-                                                                                height: 10px;
-                                                                              -webkit-transform: rotate(-45deg);
-                                                                            }
-                                                                            section#education article div.inner p {
-                                                                              padding: 15px;
-                                                                              margin: 0;
-                                                                              font-size: 14px;
-                                                                              background: #fff;
-                                                                              color: #656565;
-                                                                              border-radius: 0 0 6px 6px;
-                                                                            }
-                                                                            section#education article:nth-child(2n+2) div.inner {
-                                                                              float: right;
-                                                                            }
-                                                                            section#education article:nth-child(2n+2) div.inner h2:after {
-                                                                              left: -5px;
-                                                                            }
-                                                                            section#education article:nth-child(1) div.inner h2 {
-                                                                              background: #e74c3c;
-                                                                            }
-                                                                            section#education article:nth-child(1) div.inner h2:after {
-                                                                              background: #e74c3c;
-                                                                            }
-                                                                            section#education article:nth-child(2) div.inner h2 {
-                                                                              background: #2ecc71;
-                                                                            }
-                                                                            section#education article:nth-child(2) div.inner h2:after {
-                                                                              background: #2ecc71;
-                                                                            }
-                                                                            section#education article:nth-child(3) div.inner h2 {
-                                                                              background: #e67e22;
-                                                                            }
-                                                                            section#education article:nth-child(3) div.inner h2:after {
-                                                                              background: #e67e22;
-                                                                            }
-                                                                            section#education article:nth-child(4) div.inner h2 {
-                                                                              background: #1abc9c;
-                                                                            }
-                                                                            section#education article:nth-child(4) div.inner h2:after {
-                                                                              background: #1abc9c;
-                                                                            }
-                                                                            section#education article:nth-child(5) div.inner h2 {
-                                                                              background: #9b59b6;
-                                                                            }
-                                                                            section#education article:nth-child(5) div.inner h2:after {
-                                                                              background: #9b59b6;
-                                                                            }
 
 
 /*--------------------------------------------------------------
@@ -930,12 +911,15 @@ section {
   color: #fff;
 }
 
+
+
 .testimonials .testimonial-item .testimonial-img {
   width: 100px;
   border-radius: 50%;
   border: 6px solid rgba(255, 255, 255, 0.15);
   margin: 0 auto;
 }
+
 
 .testimonials .testimonial-item h3 {
   font-size: 20px;
@@ -1001,7 +985,6 @@ section {
 /*--------------------------------------------------------------
 # INTEREST
 --------------------------------------------------------------*/
-
 .interst {
   padding: 80px 0;
   background-color: #f5f5f5;
@@ -1009,25 +992,29 @@ section {
 }
 
 .interest-card {
-  background-color: #fff;
+  background-color: lightcyan; /* Initial background color */
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
   opacity: 0;
   transform: scale(0.8);
-  animation: cardAnimation 1s forwards, borderColorAnimation 5s infinite alternate;
+  animation: cardAnimation 1s forwards, backgroundColorAnimation 5s infinite alternate, borderColorAnimation 5s infinite alternate;
   position: relative;
   transition: border-color 0.3s ease-in-out;
-  background-color: lightcyan;
 }
+
 .border-animation {
   border: 2px solid red;
 }
+
 .interest-card h3 {
   font-size: 24px;
+  font-weight: bold; /* Add this line to make the heading bold */
   margin-bottom: 10px;
+  font-family: "Helvetica Neue", sans-serif; /* Add a suitable font-family */
 }
+
 .interest-card p {
   font-size: 16px;
   color: #666;
@@ -1039,6 +1026,19 @@ section {
     transform: scale(1);
   }
 }
+
+@keyframes backgroundColorAnimation {
+  0% {
+    background-color: lightcyan;
+  }
+  50% {
+    background-color: lightpink; /* Change this to the desired color */
+  }
+  100% {
+    background-color: lightgreen; /* Change this to the desired color */
+  }
+}
+
 @keyframes borderColorAnimation {
   0% {
     border-color: goldenrod;
@@ -1050,12 +1050,12 @@ section {
     border-color: purple;
   }
 }
+
 @media (max-width: 768px) {
   .interest-card {
     padding: 20px;
   }
 }
-
 
 /*--------------------------------------------------------------
 # My Resume
